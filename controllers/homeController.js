@@ -30,6 +30,23 @@ module.exports = {
                 console.log(`Error fetching users: ${error.message}`)
                 res.redirect("/");
             });
+    },
+
+    show(req, res, next) {
+        let productId = req.params.id;
+        Product.findById(productId)
+            .then(product => {
+                res.locals.product = product;
+                next();
+            })
+            .catch(error => {
+                console.log(`Error fetching user by ID: ${error.message}`);
+                next(error);
+            });
+    },
+
+    showView(req, res) {
+        res.render("show");
     }
 
 

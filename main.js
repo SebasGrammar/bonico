@@ -52,6 +52,8 @@ Product.create({
     picture: "/images/products/Dona.png"
 })
 
+router.get("/products/:id", homeController.show, homeController.showView);
+
 // app.get("/", function(req, res) {
 //     res.render("index")
 // });

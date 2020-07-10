@@ -1,0 +1,19 @@
+<h1> <%= product.name %></h1>
+<table class="table">
+    <tr>
+        <th>Name</th>
+        <!-- http://localhost:3000/products/5f0801b0d6f2d827ac8d784b -->
+        <a href="<%= `/products/${product._id}` %>">
+            <%= product.name %>
+        </a>
+        <td><%= product.name %></td>
+    </tr>
+
+</table>
+
+<!-- <% if (product.subscribedAccount) { %>
+<h4 class="center"> This product has a
+    <a href="<%=`/subscribers/${product.subscribedAccount}` %>">
+        subscribed account</a>.
+</h4>
+<% } %> -->
