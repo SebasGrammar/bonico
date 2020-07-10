@@ -49,31 +49,24 @@ Product.deleteMany({}) // not doing anything
 
 Product.create({
     name: "Dona",
-    picture: "/images/products/Dona.png"
+    picture: "/images/products/Dona.png",
+    description: "LLASDL KAOPSKDOAKSP DOPAKSDPKAOK POKOAKSPDKO OAKSOPDKOK",
+    price: 35555
+}).catch(error => { // this -> tomorrow
+    console.log(`${error}: this product already exists`)
 })
 
 router.get("/products/:id", homeController.show, homeController.showView);
 
-// app.get("/", function(req, res) {
-//     res.render("index")
-// });
-
 app.get("/", homeController.index);
 
-//app.get("/products", homeController.products)
-
 app.get("/products", homeController.test)
-
-
-// app.get("/", homeController.index);
-
-//app.get("/", homeController.index);
 
 app.use(errorController.logErrors);
 app.use(errorController.respondNoResourceFound);
 app.use(errorController.respondInternalError);
 
-app.use("/", router); // THIS ROUTER SHIT IS GIVING ME MORE TROUBLE THAN THE LEARNING BIT ITSELF! FUCK THIS SHIT!
+app.use("/", router); 
 
 app.listen(app.get("port"), () => {
     console.log(`Server running at http://localhost:${app.get("port")}`);

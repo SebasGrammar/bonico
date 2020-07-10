@@ -2,11 +2,14 @@
 <table class="table">
     <tr>
         <th>Name</th>
-        <!-- http://localhost:3000/products/5f0801b0d6f2d827ac8d784b -->
-        <a href="<%= `/products/${product._id}` %>">
+        <!-- http://localhost:3000/products/5f080e1f95bce0075cbba894 -->
+        <!-- <a href="<%= `/products/${product._id}` %>">
             <%= product.name %>
-        </a>
+        </a> -->
         <td><%= product.name %></td>
+        <img src="<%= product.picture %>" alt="" style="width: 80px">
+        <td><%= product.description %></td>
+        <td><%= product.price %></td>
     </tr>
 
 </table>
